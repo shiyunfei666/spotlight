@@ -10,7 +10,7 @@
     width: 100%;
     z-index: 99999;
     color: #fff;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, .5);
     opacity: 0;
     overflow: hidden;
     user-select: none;
@@ -79,11 +79,16 @@
     transition: none;
   }
 }
-.spl-track{
-  position: absolute;
+.spl-track {
   width: 100%;
   height: 100%;
+  padding: 30px;
+  box-sizing: border-box;
   contain: strict;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .spl-spinner{
   position: absolute;
@@ -107,8 +112,8 @@
 }
 .spl-scene {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
   transition: transform 0.65s cubic-bezier(0.1, 1, 0.1, 1);
   contain: layout size;
   will-change: transform;
@@ -142,19 +147,17 @@
 }
 .spl-header {
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: unset;
+  left: calc(50% - 100px);
+  bottom: 20px;
+  width: fit-content;
   height: 50px;
   text-align: right;
   background-color: rgba(0, 0, 0, 0.45);
-  transform: translateY(-100px);
   transition: transform 0.35s ease;
-  overflow: hidden;
-  will-change: transform;
-}
-#spotlight.menu .spl-header,
-.spl-header:hover{
-  transform: translateY(0);
+  border-radius: 8px;
+  transform: unset;
+  z-index: 1000;
 }
 .spl-header div {
   display: inline-block;
@@ -189,10 +192,6 @@
   transform: translateY(100%);
   transition: transform 0.35s ease;
   will-change: transform;
-}
-#spotlight.menu .spl-footer,
-.spl-footer:hover{
-  transform: translateY(0);
 }
 .spl-title{
   font-size: 22px;
@@ -239,6 +238,10 @@
   background-image: url(@zoomin);
   background-size: 22px;
 }
+.spl-zoom-rotate{
+  background-image: url(@zoomrotate);
+  background-size: 22px;
+}
 .spl-download{
   background-image: url(@download);
   background-size: 20px;
@@ -255,6 +258,9 @@
 }
 .spl-close{
   background-image: url(@close);
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 .spl-info{
   background-image: url(@info);

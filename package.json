@@ -38,13 +38,18 @@
     "copy": "cpx \"src/img/*.*\" dist/img/",
     "clean": "if exist dist rmdir dist /s /q && mkdir dist && if exist dist rmdir tmp /s /q && mkdir tmp",
     "build:css": "lessc src/css/spotlight.less src/css/spotlight.css",
-    "build:css:bundle": "node task/bundle --image && lessc --autoprefix=\">=1%\" --csswring=\"--sourcemap --preserve-hacks\" --clean-css=\"--s1 --advanced --rebase\" tmp/bundle.less dist/css/spotlight.min.css && csso dist/css/spotlight.min.css --output dist/css/spotlight.min.css",
+    "build:css:bundle": "node task/bundle --image && lessc --csswring=\"--sourcemap --preserve-hacks\" --clean-css=\"--s1 --advanced --rebase\" tmp/bundle.less dist/css/spotlight.min.css && csso dist/css/spotlight.min.css --output dist/css/spotlight.min.css",
     "build:js": "node task/build",
     "build:bundle": "node task/build --bundle",
     "build:svg": "node task/svgo",
     "build": "npm run clean && npm run copy && npm run build:svg && npm run build:css && npm run build:css:bundle && node task/bundle --style && npm run build:js && npm run build:bundle && echo Build Complete. && exit 0",
     "server": "node task/server.js"
   },
+  "browserslist": [
+    ">= 1%",
+    "last 2 versions",
+    "not dead"
+  ],
   "files": [
     "dist/",
     "src/",
@@ -55,16 +60,21 @@
   ],
   "readme": "README.md",
   "devDependencies": {
-    "base64-img": "^1.0.4",
-    "cpx": "^1.5.0",
+    "autoprefixer": "^10.4.20",
+    "base64-img": "^1.0.1",
+    "browserslist": "^4.24.4",
+    "cpx": "^1.2.1",
     "csso": "^4.2.0",
     "csso-cli": "^3.0.0",
     "google-closure-compiler": "^20210406.0.0",
     "less": "^4.1.1",
-    "less-plugin-autoprefix": "^2.0.0",
-    "less-plugin-clean-css": "^1.5.1",
-    "less-plugin-csswring": "^0.0.1",
+    "less-plugin-autoprefix": "1.4.1",
+    "less-plugin-clean-css": "1.5.1",
+    "less-plugin-csswring": "0.0.1",
     "svgo": "^2.3.0",
     "web-servo": "^0.5.1"
+  },
+  "dependencies": {
+    "spotlight.js": "file:"
   }
 }

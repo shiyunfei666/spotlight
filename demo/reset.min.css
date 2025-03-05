@@ -1,0 +1,368 @@
+@charset "utf-8";
+/*！-CSS重置和样式初始化(参考Normalize.css) ~ v1.0--*/
+/*pc端和移动端通用的重置*/
+body, div, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, button, input, textarea, th, td {
+    font-size:100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 100%;
+}
+body{
+    overflow-x: auto;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: .04em;
+    font-size: 13px;
+    line-height: 1.6;
+    font-family: CXChineseQuote,-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+/*font-size初始化*/
+.size10{ font-size: 10px; }
+.size11{ font-size: 11px; }
+.size12{ font-size: 12px; }
+.size13{ font-size: 13px; }
+.size14{ font-size: 14px; }
+.size15{ font-size: 15px; }
+.size16{ font-size: 16px; }
+.size18{ font-size: 18px; }
+.size20{ font-size: 20px; }
+.size24{ font-size: 24px; }
+.size26{ font-size: 26px; }
+.size28{ font-size: 28px; }
+.size30{ font-size: 30px; }
+.size32{ font-size: 32px; }
+.size36{ font-size: 36px; }
+.size40{ font-size: 40px; }
+.size48{ font-size: 48px; }
+.size60{ font-size: 60px; }
+.size72{ font-size: 72px; }
+.size90{ font-size: 90px; }
+small {
+    font-size: 12px
+}
+
+h1 {
+    font-size: 18px
+}
+
+h2 {
+    font-size: 16px
+}
+
+h3 {
+    font-size: 14px
+}
+
+h4, h5, h6 {
+    font-size: 100%
+}
+
+ul, ol {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent
+}
+
+a:link,a:hover, a:active, a:visited  {
+    outline-width: 0;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+hr {
+    border: 0;
+    height: 1px
+}
+
+img {
+    border-style: none
+}
+
+img:not([src]) {
+    display: none
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: 100%
+}
+
+input, textarea, button, a {
+    font-family:"微软雅黑", "黑体","宋体";
+    font-size:100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block
+}
+
+
+
+progress {
+    vertical-align: baseline
+}
+
+mark {
+    background-color: #ff0;
+    color: #000
+}
+
+sub, sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -0.25em
+}
+
+sup {
+    top: -0.5em
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+    outline: 0
+}
+
+button, input {
+    overflow: visible
+}
+
+button, select {
+    text-transform: none
+}
+
+textarea {
+    overflow: auto
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button
+}
+
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+[type="checkbox"], [type="radio"] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-input-placeholder {
+    color: inherit;
+    opacity: .54
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+.clearfix:after {
+    display: block;
+    height: 0;
+    content: "";
+    clear: both;
+    visibility:hidden;
+    font-size:0;
+}
+.clearfix{
+    zoom:1;
+}
+/*creed样式*/
+.fc999 {
+    color: #999;
+}
+
+[v-cloak]{
+    display: none;
+}
+
+.mr5 {margin-right: 5px;}
+
+.ml5 {margin-left: 5px;}
+
+.mb5 {margin-bottom: 5px;}
+
+.mt5 {margin-top: 5px;}
+
+.mr10 {margin-right: 10px;}
+.ml10 {margin-left: 10px;}
+.mb10 {margin-bottom: 10px;}
+.mt10 {margin-top: 10px;}
+
+.ml20 {margin-left: 20px;}
+.mb20 {margin-bottom: 20px;}
+.mr20 {margin-right: 20px;}
+.mt20 {margin-top: 20px;}
+
+.ml15 {margin-left: 15px;}
+.mr15 {margin-right: 15px;}
+.mb15 {margin-bottom: 15px;}
+.mt15 {margin-top: 15px;}
+
+.ml30{margin-left: 30px;}
+.mr30{margin-right: 30px;}
+.mt30{margin-top: 30px;}
+.mb30{margin-bottom: 30px;}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+/*0615新增*/
+.icon16 {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -2px;
+    margin-right: 5px;
+}
+.icon18 {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -2px;
+    margin-right: 4px;
+    font-size: 18px;
+}
+.bold,.is-bold{
+    font-weight: bold!important;
+}
+.center{
+    text-align: center;
+}
+.iconfont16{
+    font-size: 16px;
+    vertical-align: middle!important;
+    display: inline-block;
+    margin-top: -2px;
+}
+/*border-radius初始化*/
+.br3{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius:3px;
+}
+.br4{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.br5{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.br6{
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.br10{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.br30{
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+/*根据设计文档修改字体*/
+@font-face {
+    font-family: CXChineseQuote; /*自己取的名字*/
+    font-weight: 300;
+    src: local("PingFangSC-Light");
+    unicode-range: U+2018,U+2019,U+201c,U+201d /*指定这些中文符号使用PingFangSC-Light字体*/
+}
+
+@font-face {
+    font-family: CXChineseQuote;
+    font-weight: 400;
+    src: local("PingFangSC-Regular");
+    unicode-range: U+2018,U+2019,U+201c,U+201d
+}
+
+@font-face {
+    font-family: CXChineseQuote;
+    font-weight: 500;
+    src: local("PingFangSC-Medium");
+    unicode-range: U+2018,U+2019,U+201c,U+201d
+}
+
+@font-face {
+    font-family: CXChineseQuote;
+    font-weight: 600;
+    src: local("PingFangSC-Semibold");
+    unicode-range: U+2018,U+2019,U+201c,U+201d
+}
+/*富文本修改*/
+.myRichText{
+    font-size: 14px!important;
+}
+.myRichText table{
+    /*不能自己设置,因为colgroup 设置了第一行的宽度,table设置table-layout:fixed,宽度由第一行宽度决定*/
+    /*width: 654px!important;*/
+    width: auto!important;
+}
+.richtext em, .richtext i {
+    font-style: initial!important;
+    font-weight: unset;
+}
+.richtext .table{
+    position: relative;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background: #DADFE6;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.min.css">
+    <script src="../dist/spotlight.bundle.js"></script>
+    <script>
+        // $(function () {
+        //     $('body').click(function (e) {
+        //         if ($(e.target).hasClass('spl-pane')) {
+        //             Spotlight.close()
+        //         }
+        //     })
+        // })
+    </script>
+</head>
+
+<body>
+    <button onclick="showImg()">显示</button>
+    <script>
+        function showImg() {
+            Spotlight.show([{
+                src: './example3.jpg',
+            }], {
+                control: 'zoom-in,zoom-out,zoom-rotate,download,fullscreen,close'
+            });
+        }
+        showImg()
+    </script>
+</body>
+
+</html>

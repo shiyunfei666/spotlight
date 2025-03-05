@@ -43,6 +43,7 @@ let viewport_h;
 let media_w;
 let media_h;
 let scale;
+let rotate = 0;
 
 let is_down;
 let dragged;
@@ -155,11 +156,12 @@ export function init(){
 
     addControl("info", info);
     addControl("autofit", autofit);
-    addControl("zoom-in", zoom_in);
+    addControl("download", download);
+    addControl("zoom-rotate", zoom_rotate);
     addControl("zoom-out", zoom_out);
+    addControl("zoom-in", zoom_in);
     addControl("theme", theme);
     player = addControl("play", play);
-    addControl("download", download);
 
     addListener(page_prev, "click", prev);
     addListener(page_next, "click", next);
@@ -692,7 +694,7 @@ function update_scroll(force_scale){
 
     //console.log("update_scroll", force_scale);
 
-    setStyle(media, "transform", "translate(-50%, -50%) scale(" + (force_scale || scale) + ")");
+    setStyle(media, "transform", "translate(-50%, -50%) scale(" + (force_scale || scale) + ") rotate(" + rotate + "deg)");
 }
 
 /**
@@ -1175,9 +1177,9 @@ function zoom_out(e){
 
     disable_autoresizer();
 
-    if(value >= 1){
+    if(value > .25){
 
-        if(value === 1){
+        if(value >= .25){
 
             x = y = 0;
 
@@ -1197,6 +1199,11 @@ function zoom_out(e){
     }
 
     //e && autohide();
+}
+
+export function zoom_rotate() {
+    rotate = rotate + 90;
+    setStyle(media, "transform", "translate(-50%, -50%) scale(" + scale + ") rotate(" + rotate + "deg)");
 }
 
 /**
@@ -1287,6 +1294,7 @@ export function close(hashchange){
 
     // teardown
 
+    rotate = 0;
     gallery_next && (media_next.src = "");
     playing && play();
     media && checkout(media);
